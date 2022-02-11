@@ -24,35 +24,78 @@ knitr::opts_knit$set(root.dir = here::here())
 options(htmltools.dir.version = FALSE)
 library(tidyverse)
 theme_set(theme_minimal())
+library(xaringanExtra)
+use_xaringan_extra(c("panelset", "tachyons"))
 ```
 
 class: center middle inverse
 
 # Practical reasons
 
----
-
-# Frequentist LMER can lead to anti-conservative *p*-values
-
 
 ---
 
 # BRMs always converge, while LMERs don't always do
 
+.center[
+![](img/convergence.jpg)
+]
+
+---
+
+# Frequentist LMER can lead to anti-conservative *p*-values
+
+**Heisig and Schaeffer 2019**
+
+- Not including random slopes increases the false-positive rate (Type I error rate).
+
+**Lindley's paradox**
+
+- Frequentist model rejects $H_0$ while Bayesian model favours it.
+
 ---
 
 # LMERs require as much work as BRMs
+
+.center[
+![](./img/timeline.png)
+]
+
+---
+
+# LMERs require as much work as BRMs
+
+.center[
+![](./img/timeline-full.png)
+]
 
 ---
 
 # You can embed prior knowledge in BRMs while you can't in LMERs
 
+.center[
+![:scale 50%](./img/goldfish.png)
+]
+
+.f6[
+(Actually, it's a myth: https://thinking.umwblogs.org/2020/02/26/goldfish-memory/)
+]
+
+---
+
+# You can embed prior knowledge in BRMs while you can't in LMERs
+
+.center[
+![:scale 70%](./img/prior-update.png)
+]
+
 ---
 
 # Bayesian inference is more intuitive than frequentist inference
 
+- The *p*-value is the probability of finding a certain difference or a bigger difference, assuming that there is no difference. 😱😱😱
 
-
+- A Bayesian posterior probability distribution tells you the probability that the estimated effect falls within a specific range of values.
 
 ---
 
