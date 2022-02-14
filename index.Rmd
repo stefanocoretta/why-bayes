@@ -35,83 +35,145 @@ use_xaringan_extra(c("panelset", "tachyons"))
 
 ## Is there (not) an effect of X on Y?
 
+--
+
 ## What is the effect of X on Y?
+
+--
 
 ## Given two or more hypotheses, which is the most compatible with the data?
 
 ---
 
-class: center middle inverse
+# Statistical inference: two approaches to probability
 
-# Practical reasons
+--
 
+.pull-left[
+## Frequentist
 
----
+$$
+\begin{aligned}
+      & x_d = x_1 - x_2 \\
+H_0:  \quad & x_d = 0 \\
+H_1:  \quad & x_d \neq 0 \\
+\end{aligned}
+$$
 
-# BRMs always converge, while LMERs don't always do
+<br>
 
-.center[
-![](img/convergence.jpg)
+**Reject $H_0$.**
+
+*Caveat*: $H_1$ can be any of:
+* $x_d > 0$,
+* $x_d < 0$,
+* $\{x_d \in \mathbb{R} | x_d \neq 0\}$, i.e. "any real number except 0".
+]
+
+--
+
+.pull-right[
+## Bayesian
+
+$$
+\begin{aligned}
+P(\theta|d) & = P(d|\theta) \times P(\theta) \\
+            & = \text{likelihood} \times \text{prior belief}
+\end{aligned}
+$$
 ]
 
 ---
 
-# Frequentist LMER can lead to anti-conservative *p*-values
+# Statistical inference: two approaches to probability
 
-.bg-washed-yellow.b--gold.ba.bw2.br3.shadow-5.ph4.mt5[
-**Heisig and Schaeffer 2019**
+.pull-left[
+## Frequentist
 
-- Not including random slopes increases the false-positive rate (Type I error rate).
+<br>
+<br>
+<br>
+<br>
+
+$$\huge P(d|H_0)$$
+
 ]
 
-.bg-washed-yellow.b--gold.ba.bw2.br3.shadow-5.ph4.mt5[
+.pull-right[
+## Bayesian
 
-**Lindley's paradox**
+<br>
+<br>
+<br>
+<br>
 
-- Frequentist model rejects $H_0$ while Bayesian model favours it.
-]
+$$\huge P(H|d)$$
 
----
-
-# LMERs require as much work as BRMs
-
-.center[
-![](./img/timeline.png)
-]
-
----
-
-# LMERs require as much work as BRMs
-
-.center[
-![](./img/timeline-full.png)
 ]
 
 ---
 
-# You can embed prior knowledge in BRMs while you can't in LMERs
+# Statistical inference: two approaches to probability
 
-.center[
-![:scale 50%](./img/goldfish.png)
+.pull-left[
+## Frequentist
+
+<br>
+<br>
+<br>
+<br>
+
+$$\huge P(d|H_0)$$
+
+<br>
+
+What is the probability of the data $d$ assuming that the hypothesis $H_0$ is true?
+
 ]
 
-.f6[
-(Actually, it's a myth: https://thinking.umwblogs.org/2020/02/26/goldfish-memory/)
+.pull-right[
+## Bayesian
+
+<br>
+<br>
+<br>
+<br>
+
+$$\huge P(H|d)$$
+
+<br>
+
+What is the probability of the hypothesis $H$ given the data $d$.
+
 ]
 
 ---
 
-# You can embed prior knowledge in BRMs while you can't in LMERs
+class: right middle inverse
 
-.center[
-![:scale 70%](./img/prior-update.png)
-]
+# Reason 1
+
+<br>
+<br>
+
+## .orange[LMERs] only provide evidence for rejecting the Null Hypothesis
+
+<br>
+
+## while .green[BRMs] can compare any hypothesis (not just null vs alternative)
+
+
+
+
+
+
+
 
 ---
 
-# Bayesian inference is more intuitive than frequentist inference
+# Intuitiveness
 
-.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5[
+.bg-washed-yellow.b--orange.ba.bw2.br3.shadow-5.ph4.mt5[
 
 The ***p*-value** is the probability of finding a certain difference or a bigger difference, assuming that there is no difference. 😱😱😱
 
@@ -125,7 +187,7 @@ The ***p*-value** is the probability of finding a certain difference or a bigger
 
 ---
 
-# Bayesian inference is more intuitive than frequentist inference
+# Intuitiveness
 
 .bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph4.mt5[
 
@@ -135,21 +197,15 @@ A **Bayesian posterior probability distribution** tells you the probability that
 
 ---
 
-class: center middle inverse
-
-# Conceptual reasons
-
----
-
-# LMERs only provide evidence for rejecting the Null Hypothesis
-
----
-
 # A frequentist CI is not what most people think it is
 
----
+<iframe id="inlineFrameExample"
+    title="Inline Frame Example"
+    width="1000"
+    height="450"
+    src="https://rpsychologist.com/d3/ci/">
+</iframe>
 
-# With BRMs you can compare any hypothesis, not just null/alternative
 
 ---
 
@@ -157,4 +213,194 @@ class: center middle inverse
 
 ---
 
-# BRMs will converge towards the true value in the long run
+class: right middle inverse
+
+# Reason 2
+
+<br>
+<br>
+
+## .green[Bayesian] inference is more intuitive than .orange[frequentist] inference
+
+
+
+
+
+
+
+
+---
+
+# Fitting issues
+
+.center[
+![](img/convergence.jpg)
+]
+
+---
+
+class: right middle inverse
+
+# Reason 3
+
+<br>
+<br>
+
+## .green[BRMs] always converge, .orange[LMERs] don't always do
+
+
+
+
+
+
+
+
+---
+
+# Type-I error rates and co
+
+.bg-washed-yellow.b--orange.ba.bw2.br3.shadow-5.ph4.mt5[
+**Heisig and Schaeffer 2019**
+
+- Not including random slopes increases the false-positive rate (Type I error rate).
+]
+
+.bg-washed-yellow.b--orange.ba.bw2.br3.shadow-5.ph4.mt5[
+
+**Lindley's paradox**
+
+- Frequentist model rejects $H_0$ while Bayesian model favours it.
+]
+
+---
+
+class: right middle inverse
+
+# Reason 4
+
+<br>
+<br>
+
+## .orange[LMERs] are more sensitive to error and can lead to anti-conservative *p*-values
+
+
+
+
+
+
+
+
+
+---
+
+# Memory
+
+.center[
+![:scale 50%](./img/goldfish.png)
+]
+
+--
+
+.f6[
+(Actually, it's a myth: https://thinking.umwblogs.org/2020/02/26/goldfish-memory/)
+]
+
+---
+
+# Memory
+
+.center[
+![:scale 70%](./img/prior-update.png)
+]
+
+
+---
+
+class: right middle inverse
+
+# Reason 5
+
+<br>
+<br>
+
+## You can embed prior knowledge in .green[BRMs] while you can't in .orange[LMERs]
+
+
+
+
+
+
+
+
+
+---
+
+# Time management
+
+.center[
+![](./img/timeline.png)
+]
+
+---
+
+# Time management
+
+.center[
+![](./img/timeline-full.png)
+]
+
+---
+
+class: right middle inverse
+
+# Reason 6
+
+<br>
+<br>
+
+## .orange[LMERs] require as much work as .green[BRMs]
+
+
+
+
+
+
+
+---
+
+# *In Baiulo veritas*
+
+
+---
+
+class: right middle inverse
+
+# Reason 7
+
+<br>
+<br>
+
+## .green[BRMs] converge towards the true value in the long run, while .orange[LMERs] do not
+
+
+
+
+---
+
+# Summary
+
+* Reason 1: .orange[LMERs] only provide evidence for rejecting the Null Hypothesis, while .green[BRMs] can compare any hypothesis (not just null vs alternative)
+
+* Reason 2: .green[Bayesian] inference is more intuitive than .orange[frequentist] inference
+
+* Reason 3: .green[BRMs] always converge, .orange[LMERs] don't always do
+
+* Reason 4: .orange[LMERs] are more sensitive to error and can lead to anti-conservative *p*-values
+
+* Reason 5: You can embed prior knowledge in .green[BRMs] while you can't in .orange[LMERs]
+
+* Reason 6: .orange[LMERs] require as much work as .green[BRMs]
+
+* Reason 7: .green[BRMs] converge towards the true value in the long run, while .orange[LMERs] do not
+
+
