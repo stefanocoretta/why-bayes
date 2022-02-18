@@ -450,6 +450,17 @@ class: right middle inverse
 
 ---
 
+# LMERs can be useful
+
+- In corporate decisions, where a categorical yes/no outcome is necessary.
+
+- When you are only interested in rejecting the Null Hypothesis (with the caveat that you must run a prospective power analysis and reduce researcher's degrees of freedom to a minimum).
+
+- You can use equivalence testing with LMERs if you are interested in accepting the Null Hypothesis (same caveat as above).
+
+
+---
+
 class: center middle inverse
 
 # Questions?
