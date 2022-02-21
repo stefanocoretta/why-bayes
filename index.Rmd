@@ -199,7 +199,7 @@ A **Bayesian posterior probability distribution** tells you the probability that
 
 ]
 
-```{r posterior, echo=FALSE, fig.width=7, fig.height=4, out.width="800px", fig.retina=2, fig.align="center"}
+```{r posterior, echo=FALSE, include=TRUE, fig.width=7, fig.height=4, out.width="800px", fig.retina=2, fig.align="center"}
 x <- seq(-50, 200, by = 0.01)
 y = dnorm(x, 75, 30)
 ggplot() +
