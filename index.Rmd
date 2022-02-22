@@ -33,6 +33,8 @@ use_xaringan_extra(c("panelset", "tachyons"))
 <br>
 <br>
 
+--
+
 .f2[Is there (not) an effect of X on Y?]
 
 --
@@ -160,11 +162,11 @@ class: right middle inverse
 <br>
 <br>
 
-## .orange[LMERs] only provide evidence for rejecting the Null Hypothesis
+## .orange[Frequentist models] only provide evidence for rejecting the Null Hypothesis
 
 <br>
 
-## while .green[BRMs] can compare any hypothesis (not just null vs alternative)
+## while .green[Bayesian models] can compare any hypothesis (not just null vs alternative)
 
 
 
@@ -288,7 +290,7 @@ class: right middle inverse
 <br>
 <br>
 
-## .green[BRMs] always converge, .orange[LMERs] don't always do
+## .green[Bayesian models] always converge, .orange[Frequentist models] don't always do
 
 
 
@@ -323,7 +325,7 @@ class: right middle inverse
 <br>
 <br>
 
-## .orange[LMERs] are more sensitive to error and can lead to anti-conservative *p*-values
+## .orange[Frequentist models] are more sensitive to error and can lead to anti-conservative *p*-values
 
 
 
@@ -365,7 +367,7 @@ class: right middle inverse
 <br>
 <br>
 
-## You can embed prior knowledge in .green[BRMs] while you can't in .orange[LMERs]
+## You can embed prior knowledge in .green[Bayesian models] while you can't in .orange[Frequentist models]
 
 
 
@@ -400,7 +402,7 @@ class: right middle inverse
 <br>
 <br>
 
-## .orange[LMERs] require as much work as .green[BRMs]
+## .orange[Frequentist models] require as much work as .green[Bayesian ones.]
 
 
 
@@ -424,39 +426,39 @@ class: right middle inverse
 <br>
 <br>
 
-## .green[BRMs] converge towards the true value in the long run, while .orange[LMERs] do not
-
-
-
-
----
-
-# Summary
-
-* Reason 1: .orange[LMERs] only provide evidence for rejecting the Null Hypothesis, while .green[BRMs] can compare any hypothesis (not just null vs alternative)
-
-* Reason 2: .green[Bayesian] inference is more intuitive than .orange[frequentist] inference
-
-* Reason 3: .green[BRMs] always converge, .orange[LMERs] don't always do
-
-* Reason 4: .orange[LMERs] are more sensitive to error and can lead to anti-conservative *p*-values
-
-* Reason 5: You can embed prior knowledge in .green[BRMs] while you can't in .orange[LMERs]
-
-* Reason 6: .orange[LMERs] require as much work as .green[BRMs]
-
-* Reason 7: .green[BRMs] converge towards the true value in the long run, while .orange[LMERs] do not
+## .green[Bayesian models] converge towards the true value in the long run, while .orange[Frequentist models] do not
 
 
 ---
 
-# LMERs can be useful
+# But... Frequentist statistics can be useful
 
 - In corporate decisions, where a categorical yes/no outcome is necessary.
 
 - When you are only interested in rejecting the Null Hypothesis (with the caveat that you must run a prospective power analysis and reduce researcher's degrees of freedom to a minimum).
 
 - You can use equivalence testing with LMERs if you are interested in accepting the Null Hypothesis (same caveat as above).
+
+---
+
+# Summary
+
+* Reason 1: .orange[Frequentist] models only provide evidence for rejecting the Null Hypothesis, while .green[BRMs] can compare any hypothesis (not just null vs alternative)
+
+* Reason 2: .green[Bayesian] inference is more intuitive than .orange[frequentist] inference.
+
+* Reason 3: .green[Bayesian] models always converge, .orange[Frequentist] models don't always do.
+
+* Reason 4: .orange[Frequentist] models are more sensitive to error and can lead to anti-conservative *p*-values.
+
+* Reason 5: You can embed prior knowledge in .green[Bayesian] models while you can't in .orange[Frequentist] models.
+
+* Reason 6: .orange[Frequentist] models require as much work as .green[Bayesian] models.
+
+* Reason 7: .green[Bayesian] models converge towards the true value in the long run, while .orange[Frequentist] models do not.
+
+
+
 
 
 ---
